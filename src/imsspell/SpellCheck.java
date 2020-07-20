@@ -20,7 +20,7 @@ public class SpellCheck implements SpellCheckListener {
 //        PropertiesConfiguration configuration = new PropertiesConfiguration();
 //        configuration.load("Application.properties");
 //        String dictFile = configuration.getString("dict.path");
-        String dictFile = "D:/IR/Resources/english.0/english.0";
+        String dictFile = "F:/IR/Resources/english.0/english.0";
 
         misspelled = new ArrayList<>();
         SpellDictionary dictionary = new SpellDictionaryHashMap(new File(dictFile));

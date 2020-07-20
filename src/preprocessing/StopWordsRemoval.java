@@ -16,7 +16,7 @@ public class StopWordsRemoval {
 //        PropertiesConfiguration config = new PropertiesConfiguration();
 //        config.load("Application.properties");
 //        stopWordPath = config.getString("stopwords.path");
-        stopWordPath = "D:/IR/Resources/stop-words.txt";
+        stopWordPath = "F:/IR/Resources/stop-words.txt";
 
         stopWords = FileCollectingFunctions.getAllWordsInFile(stopWordPath);
     }

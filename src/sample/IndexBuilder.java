@@ -1,7 +1,6 @@
 package sample;
 
 import indexing.Indexer;
-import org.apache.commons.configuration.ConfigurationException;
 import org.apache.commons.configuration.PropertiesConfiguration;
 import preprocessing.PreProcessor;
 import preprocessing.TextProcess;
@@ -26,7 +25,7 @@ public class IndexBuilder {
 //        config = new PropertiesConfiguration();
 //        config.load("Application.properties");
 //        corpusPath = config.getString("corpus.path");
-        corpusPath  = "D:/IR/corpus";
+        corpusPath  = "F:/IR/corpus";
         preProcessor = new PreProcessor();
         indexer = new Indexer();
         textProcess = new TextProcess();
@@ -41,6 +40,7 @@ public class IndexBuilder {
             break;
             }
         indexer.build();
+
         }
 
     private void processFile(File fileEntry) throws IOException {

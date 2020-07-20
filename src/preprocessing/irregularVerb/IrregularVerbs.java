@@ -25,7 +25,7 @@ public class IrregularVerbs {
 
 
 //        loadVerbs(config.getString("irregularVerb.path"));
-        loadVerbs("D:/IR/Resources/irregular-verbs.txt");
+        loadVerbs("F:/IR/Resources/irregular-verbs.txt");
 
     }
 

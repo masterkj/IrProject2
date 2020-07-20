@@ -1,6 +1,5 @@
 package preprocessing;
 
-import org.apache.commons.configuration.ConfigurationException;
 import preprocessing.irregularVerb.IrregularVerbs;
 import preprocessing.stemmer.Stemmer;
 
