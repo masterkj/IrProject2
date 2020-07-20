@@ -2,9 +2,10 @@ package imsspell;
 
 import com.swabunga.spell.engine.SpellDictionary;
 import com.swabunga.spell.engine.SpellDictionaryHashMap;
-import com.swabunga.spell.event.*;
-import org.apache.commons.configuration.ConfigurationException;
-import org.apache.commons.configuration.PropertiesConfiguration;
+import com.swabunga.spell.event.SpellCheckEvent;
+import com.swabunga.spell.event.SpellCheckListener;
+import com.swabunga.spell.event.SpellChecker;
+import com.swabunga.spell.event.StringWordTokenizer;
 
 import java.io.File;
 import java.io.IOException;
@@ -20,7 +21,7 @@ public class SpellCheck implements SpellCheckListener {
 //        PropertiesConfiguration configuration = new PropertiesConfiguration();
 //        configuration.load("Application.properties");
 //        String dictFile = configuration.getString("dict.path");
-        String dictFile = "F:/IR/Resources/english.0/english.0";
+        String dictFile = "D:/IR/Resources/english.0/english.0";
 
         misspelled = new ArrayList<>();
         SpellDictionary dictionary = new SpellDictionaryHashMap(new File(dictFile));

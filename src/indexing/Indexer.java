@@ -10,7 +10,10 @@ public class Indexer {
      private Map<String, HashMap<String, Integer>> wordFrequency = new HashMap<>();
      private Map<String, Double> wordIdf = new HashMap<>();
      private Map<String, HashMap<String, Double>> index = new HashMap<>();
-     private Map<String, Integer> docSizes = new HashMap<>();
+
+
+
+    private Map<String, Integer> docSizes = new HashMap<>();
      private Integer docsCount;
 
     public void addLineToDoc(String docName, List<String> line) {
@@ -40,7 +43,7 @@ public class Indexer {
             index.put(docName, new HashMap<>());
             freqMap.forEach((word, freq) -> index.get(docName).put(word,calculateTf(freq, docSize) * calculateIdf(word, docsCount)));
         });
-        printIndex();
+//        printIndex();
     }
 
     private Integer getDocSize(String doc) {
@@ -55,11 +58,11 @@ public class Indexer {
     }
 
 
-    private Double calculateTf(Integer freq, Integer docSize) {
+    public static Double calculateTf(Integer freq, Integer docSize) {
         DecimalFormat df = new DecimalFormat("#.#########");
         Double d =  (freq *1.0) / docSize;
         d = Double.parseDouble(df.format(d));
-        System.out.println("non-normalized: "+freq+" docsSize: "+docSize+" , normalized: "+d+ " doc size: "+ docSize);
+//        System.out.println("non-normalized: "+freq+" docsSize: "+docSize+" , normalized: "+d+ " doc size: "+ docSize);
         return d;
     }
 
@@ -68,8 +71,10 @@ public class Indexer {
         if((res = wordIdf.getOrDefault(word, null))!= null)
             return res;
         Integer df = this.getDf(word);
-        System.out.println("word: "+ word + " docsCount: "+docsCount+" df: "+df+" idf: "+ Math.log(docsCount * 1.0 / (df + 1)));
-        return Math.log(docsCount * 1.0 / (df + 1));
+//        System.out.println("word: "+ word + " docsCount: "+docsCount+" df: "+df+" idf: "+ Math.log(docsCount * 1.0 / (df + 1)));
+        Double idf = Math.log(docsCount * 1.0 / (df + 1));
+        wordIdf.put(word,idf);
+        return idf;
     }
 
     public Double getIdf(String word) {
@@ -82,6 +87,10 @@ public class Indexer {
             WordGloballyFreq.updateAndGet(v -> freqMap.getOrDefault(word, -1) != -1 ? v + 1 : v);
         });
         return WordGloballyFreq.get();
+    }
+
+    public Map<String, HashMap<String, Double>> getIndex() {
+        return index;
     }
 
 }
