@@ -34,11 +34,14 @@ public class IndexBuilder {
 
 
     public void build() throws IOException {
-
+        int sicel = 2;
         final File folder = new File(corpusPath);
         for (final File fileEntry : folder.listFiles()) {
             processFile(fileEntry);
-            break;
+            if (sicel == 0) {
+                break;
+            }
+            sicel --;
             }
         indexer.build();
         }
@@ -57,7 +60,7 @@ public class IndexBuilder {
 //        List<String> splitedLine = (new ArrayList<String>(Arrays.asList(line.toLowerCase().split("\\s"))));
 
 //        splitedLine = preProcessor.linePreProcess(splitedLine);
-        splitedLine = textProcess.lemmatize(line);
+        splitedLine = textProcess.lemmatize(line.toLowerCase());
         indexer.addLineToDoc(fileName, splitedLine);
     }
 }
