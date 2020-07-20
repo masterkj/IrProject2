@@ -56,7 +56,7 @@ public class IndexBuilder {
 //        line = HelpingFunctions.removeDecimeters(line);
 //        List<String> splitedLine = (new ArrayList<String>(Arrays.asList(line.toLowerCase().split("\\s"))));
 
-        splitedLine = textProcess.lemmatize(line.toLowerCase());
+        splitedLine = textProcess.lemmatize(line);
         indexer.addLineToDoc(fileName, splitedLine);
     }
 

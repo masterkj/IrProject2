@@ -22,18 +22,18 @@ public class QueryProcessing {
     }
 
     private Map<String, Double> calculateQueryWeight(List<String> processedQuery) {
-        Map<String, Integer> wordTF;
+        Map<String, Double> wordTF;
         wordTF = queryWordTf(processedQuery);
         Map<String, Double> queryWeight = new HashMap<>();
         wordTF.forEach((word, tf) -> queryWeight.put(word, tf* this.indexer.getIdf(word)));
         return queryWeight;
     }
 
-    private Map<String, Integer> queryWordTf(List<String> processedQuery) {
-        Map<String, Integer> wordFreq = new HashMap<>();
+    private Map<String, Double> queryWordTf(List<String> processedQuery) {
+        Map<String, Double> wordFreq = new HashMap<>();
         processedQuery.forEach(word -> {
             if(wordFreq.getOrDefault(word, null) == null)
-                wordFreq.put(word, 1);
+                wordFreq.put(word, 1.0);
             else
                 wordFreq.put(word, wordFreq.get(word) + 1);
         });

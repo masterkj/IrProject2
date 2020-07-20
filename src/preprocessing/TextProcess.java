@@ -49,6 +49,7 @@ public class TextProcess {
     }
 
     public List<String> lemmatize(String documentText) {
+        documentText = documentText.toLowerCase();
         List<String> lemmas = new ArrayList<>();
         // Create an empty Annotation just with the given text
         Annotation document = new Annotation(documentText);

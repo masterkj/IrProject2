@@ -22,7 +22,7 @@ public class QueryMatching {
         index.getIndex().forEach((doc, vector) -> {
             docsSimilarity.put(doc, cosineSimilarity(queryVector, vector));
         });
-        sortByValue((HashMap<String, Double>) docsSimilarity);
+        docsSimilarity = sortByValue((HashMap<String, Double>) docsSimilarity);
         int x = BEST_RESULTS;
         for (Map.Entry<String, Double> el : docsSimilarity.entrySet()){
             if(x == 0)

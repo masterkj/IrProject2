@@ -16,8 +16,8 @@ public class HelpingFunctions {
 
         // Sort the list
         Collections.sort(list, new Comparator<Map.Entry<String, Double> >() {
-            public int compare(Map.Entry<String, Double> o1,
-                               Map.Entry<String, Double> o2)
+            public int compare(Map.Entry<String, Double> o2,
+                               Map.Entry<String, Double> o1)
             {
                 return (o1.getValue()).compareTo(o2.getValue());
             }
