@@ -11,7 +11,7 @@ import static utils.HelpingFunctions.sortByValue;
 public class QueryMatching {
     private Indexer index;
     private Map<String, Double> docsSimilarity;
-    private final int BEST_RESULTS = 5;
+    private final int BEST_RESULTS = 10;
 
     public QueryMatching(IndexBuilder indexBuilder) {
         index = indexBuilder.getIxndexer();

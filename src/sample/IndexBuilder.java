@@ -23,14 +23,14 @@ public class IndexBuilder {
 //        config = new PropertiesConfiguration();
 //        config.load("Application.properties");
 //        corpusPath = config.getString("corpus.path");
-        corpusPath  = "D:/IR/corpus";
+        corpusPath  = "F:/IR/corpus";
         indexer = new Indexer();
         textProcess = new TextProcess();
     }
 
 
     public void build() throws IOException {
-        int sicel = 2;
+
         final File folder = new File(corpusPath);
         for (final File fileEntry : folder.listFiles()) {
             processFile(fileEntry);

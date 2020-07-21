@@ -39,7 +39,7 @@ public class TextProcess {
 //        config = new PropertiesConfiguration();
 //        config.load("Application.properties");
 
-        stopwords = Files.readAllLines(Paths.get("D:/IR/Resources/stop-words.txt"));
+        stopwords = Files.readAllLines(Paths.get("F:/IR/Resources/stop-words.txt"));
 
         Properties props;
         props = new Properties();
