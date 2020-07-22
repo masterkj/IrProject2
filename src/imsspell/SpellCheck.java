@@ -15,7 +15,7 @@ public class SpellCheck implements SpellCheckListener {
     private List<String> misspelled;
     private SpellChecker checker = null;
     public SpellCheck() throws IOException {
-        String dictFile = "F:/IR/Resources/english.0/english.0";
+        String dictFile = "D:/IR/Resources/english.0/english.0";
         misspelled = new ArrayList<>();
         SpellDictionary dictionary = new SpellDictionaryHashMap(new File(dictFile));
         checker = new SpellChecker(dictionary);

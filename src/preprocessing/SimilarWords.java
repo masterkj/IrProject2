@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class SimilarWords{
+public class SimilarWords {
 
 
-   public static List<String> shortCurrency = Arrays.asList("$", "€", "¢", "£", "¥", "zl", "%");
+    public static List<String> shortCurrency = Arrays.asList("$", "€", "¢", "£", "¥", "zl", "%");
     public static List<String> currencySymbol = Arrays.asList("usd", "eur", "crc", "gbp", "jpy", "pln", "per");
     public static List<String> Currency = Arrays.asList("usa dolar", "euro", "costa rican colón", "british pound sterling", "japanese yen", "polish zloty",
             "percent");
@@ -46,14 +46,15 @@ public class SimilarWords{
             "Sweden Krona", "Switzerland Franc", "Suriname Dollar", "Syria Pound", "Taiwan New Dollar",
             "Thailand Baht", "Trinidad and Tobago Dollar", "Turkey Lira", "Turkey Lira", "Tuvalu Dollar",
             "Ukraine Hryvna", "United Kingdom Pound", "United States Dollar", "Uruguay Peso",
-            "Uzbekistan Som", "Venezuela Bolivar", "Viet Nam Dong","Yemen Rial", "Zimbabwe Dollar");
+            "Uzbekistan Som", "Venezuela Bolivar", "Viet Nam Dong", "Yemen Rial", "Zimbabwe Dollar");
 
-    public static  List<String> ShortCommon  = Arrays.asList("bro", "mom", "vip", "3d", "ID", "I.Q", "DIY", "T.G.I.F", "R.I.P", "KIT", "POV", "ASAP", "FYI",
+    public static List<String> ShortCommon = Arrays.asList("bro", "mom", "vip", "3d", "ID", "I.Q", "DIY", "T.G.I.F", "R.I.P", "KIT", "POV", "ASAP", "FYI",
             "YTD", "OT", "NDA", "B2B", "B2C", "HR", "PR", "CEO", "CFO", "CTO", "VP", "MBA", "CPA", "OMG",
             "NSFW", "TBH", "IMHO", "BRB", "TTYL", "BTW", "BC", "PM", "etc", "RSVP", "ATM", "AKA", "IQ",
             "e.g", "PIN", "www", "ISP", "CD", "OS", "CPU", "I/O", "PC", "IP", "CEO", "MGR", "DEPT", "ASST",
             "DIR", "ACCT", "V.P");
-    public static List<String> Commons  = Arrays.asList("brother", "mother", "very important person", "3-dimensional", "identification",
+
+    public static List<String> Commons = Arrays.asList("brother", "mother", "very important person", "3-dimensional", "identification",
             "Intelligence quotient", "do-it-yourself", "thanks God its friday", "rest in peace", "keep in touch",
             "point of view", "as soon as possible", "for your information", "Year-to-date", "OverTime",
             "Non-disclosure agreement", "business to business", "business to consumer", "Human Resources",
@@ -67,17 +68,16 @@ public class SimilarWords{
             "internet protocol", "Cheif executive officer", "manager", "department", "association", "director",
             "account", "vice-president");
 
-    public static List<String> country= Arrays.asList("North Atlantic Treaty Organization", "nato", "afghanistan", "af", "albania", "al", "algeria", "dz",
-            "american samoa", "as", "andorra", "ad", "angola", "ao", "anguilla", "ai", "antarctica", "aq",
-            "antigua and barbuda", "ag", "argentina", "ar", "armenia", "am", "aruba", "aw", "australia", "au",
-            "austria", "at", "azerbaijan", "az", "bahamas", "bs", "bahrain", "bh", "bangladesh", "bd",
-            "barbados", "bb", "belarus", "by", "belgium", "be", "belize", "bz", "benin", "bj", "bermuda", "bm",
-            "bhutan", "bt", "bolivia", "bo", "bosnia and herzegovina", "ba", "botswana", "bw", "bouvet island",
-            "bv", "brazil", "br", "british indian ocean territory", "io", "brunei darussalam", "bn", "bulgaria",
-            "bg", "burkina faso", "bf", "burundi", "bi", "cambodia", "kh", "cameroon", "cm", "canada", "ca",
-            "cape verde", "cv", "cayman islands", "ky", "central african republic", "cf", "chad", "td", "chile",
-            "cl", "china", "cn", "christmas island", "cx", "cocos islands", "cc", "colombia", "co", "comoros",
-            "km", "congo", "cg", "democratic", "cd", "cook islands", "ck", "costa rica", "cr", "cote divoire",
+    public static List<String> country = Arrays.asList("North Atlantic Treaty Organization", "afghanistan", "albania", "algeria",
+            "american samoa", "andorra", "angola", "anguilla", "antarctica",
+            "antigua and barbuda", "argentina", "armenia", "aruba", "australia",
+            "austria", "azerbaijan", "bahamas", "bahrain", "bangladesh",
+            "barbados", "belarus", "belgium", "belize", "benin", "bermuda",
+            "bhutan", "bolivia", "bosnia and herzegovina", "botswana", "bouvet island",
+            "brazil", "british indian ocean territory", "brunei darussalam", "bulgaria",
+            "burkina faso", "burundi", "cambodia", "cameroon", "canada",
+            "cape verde", "cayman islands", "central african republic", "chad", "chile", "china", "christmas island",
+            "cocos islands", "colombia", "comoros", "congo", "democratic", "cook islands", "ck", "costa rica", "cr", "cote divoire",
             "ci", "croatia", "hr", "cuba", "cu", "cyprus", "cy", "czech", "cz", "denmark", "dk", "djibouti",
             "dj", "dominica", "dm", "dominican", "do", "east timor", "tp", "ecuador", "ec", "egypt", "eg",
             "el salvador", "sv", "equatorial guinea", "gq", "eritrea", "er", "estonia", "ee", "ethiopia", "et",
@@ -114,12 +114,18 @@ public class SimilarWords{
             "tanzania united republic", "tz", "thailand", "th", "togo", "tg", "tokelau", "tk", "tonga", "to",
             "trinidad and tobago", "tt", "tunisia", "tn", "turkey", "tr", "turkmenistan", "tm",
             "turks and caicos islands", "tc", "tuvalu", "tv", "uganda", "ug", "ukraine", "ua",
-            "united arab emirates", "ae", "united kingdom", "uk", "united states", "usa","united states amrican", "usa",
+            "united arab emirates", "ae", "united kingdom", "uk", "united states", "usa", "united states amrican", "usa",
             "united states minor outlying islands", "um", "uruguay", "uy", "uzbekistan", "uz", "vanuatu", "vu",
             "venezuela", "ve", "vietnam", "vn", "virgin islands british", "vg", "virgin islands us", "vi",
             "wallis and futuna", "wf", "western sahara", "eh", "yemen", "ye", "yugoslavia", "yu", "zambia", "zm",
             "zimbabwe", "zw", "Overseas Private Investment Corporation", "opic", "United Nations", "un",
             "United Nations Educational Scientific and Cultural Organization", "unesco",
             "United Nations Childrens Emergency Fund", "unicef");
+
+    public static List<String> countryShort = Arrays.asList("nato", "af", "al", "dz", "as", "ad", "ao", "ai",
+            "aq", "ag", "ar", "am", "aw", "au", "at", "az", "bs", "bh", "bd", "bb", "by", "be", "bz",
+            "bj", "bm", "bt", "bo", "ba", "bw", "bv", "br", "io", "bn", "bg", "bf", "bi", "kh", "cm",
+            "ca", "cv", "ky", "cf", "td", "cl", "cn", "cx", "cc", "co",
+            "km", "cg", "cd");
 
 }

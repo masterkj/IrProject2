@@ -23,7 +23,7 @@ public class IndexBuilder {
 //        config = new PropertiesConfiguration();
 //        config.load("Application.properties");
 //        corpusPath = config.getString("corpus.path");
-        corpusPath  = "F:/IR/corpus";
+        corpusPath  = "D:/IR/corpus";
         indexer = new Indexer();
         textProcess = new TextProcess();
     }
