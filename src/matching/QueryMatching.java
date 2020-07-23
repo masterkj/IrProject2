@@ -11,7 +11,7 @@ import static utils.HelpingFunctions.sortByValue;
 public class QueryMatching {
     private Indexer index;
     private Map<String, Double> docsSimilarity;
-    private final int BEST_RESULTS = 10;
+    private final int BEST_RESULTS = 30;
 
     public QueryMatching(IndexBuilder indexBuilder) {
         index = indexBuilder.getIxndexer();
@@ -41,6 +41,8 @@ public class QueryMatching {
         return dotProd.get() / (vectorTall(queryVector) * vectorTall(docVector));
     }
 
+
+
     private Double vectorTall(Map<String, Double> vector) {
         Collection<Double> vecComponents;
         vecComponents = vector.values();
@@ -50,5 +52,7 @@ public class QueryMatching {
         });
         return Math.sqrt(unSquartedResulted.get());
     }
+
+
 
 }
