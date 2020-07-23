@@ -16,7 +16,6 @@ import edu.stanford.nlp.ling.CoreLabel;
 import edu.stanford.nlp.pipeline.Annotation;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 import edu.stanford.nlp.util.CoreMap;
-import org.apache.commons.configuration.ConfigurationException;
 import org.apache.commons.configuration.PropertiesConfiguration;
 
 import java.io.IOException;
@@ -32,6 +31,7 @@ public class TextProcess {
     protected StanfordCoreNLP pipeline;
     List<String> stopwords = new ArrayList<String>();
     PropertiesConfiguration config;
+    AbbreviationReplace abbreviationReplace;
 
     public TextProcess() throws IOException {
         // Create StanfordCoreNLP object properties, with POS tagging
@@ -39,16 +39,19 @@ public class TextProcess {
 //        config = new PropertiesConfiguration();
 //        config.load("Application.properties");
 
-        stopwords = Files.readAllLines(Paths.get("D:/IR/Resources/stop-words.txt"));
+        stopwords = Files.readAllLines(Paths.get("F:/IR/Resources/stop-words.txt"));
 
         Properties props;
         props = new Properties();
         props.put("annotators", "tokenize, ssplit, pos, lemma");
 
         this.pipeline = new StanfordCoreNLP(props);
+        abbreviationReplace = new AbbreviationReplace();
     }
 
     public List<String> lemmatize(String documentText) {
+        documentText = documentText.toLowerCase();
+        documentText = abbreviationReplace.process(documentText);
         documentText = documentText.toLowerCase();
         List<String> lemmas = new ArrayList<>();
         // Create an empty Annotation just with the given text

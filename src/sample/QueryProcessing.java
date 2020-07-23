@@ -18,7 +18,9 @@ public class QueryProcessing {
     }
 
     public Map<String, Double> process(String query) {
-        return calculateQueryWeight(textProcess.lemmatize(query));
+        List<String> processedText = textProcess.lemmatize(query);
+        System.out.println(processedText);
+        return calculateQueryWeight(processedText);
     }
 
     private Map<String, Double> calculateQueryWeight(List<String> processedQuery) {

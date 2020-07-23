@@ -31,8 +31,9 @@ public class Indexer {
         wordFrequency.get(docName).put(word, currentWordFreq);
     }
 
-    public void printIndex() {
-        System.out.println(index);
+    public void printIndex(String docName) {
+
+        System.out.println(index.get(docName));
     }
 
 
@@ -43,7 +44,7 @@ public class Indexer {
             index.put(docName, new HashMap<>());
             freqMap.forEach((word, freq) -> index.get(docName).put(word,calculateTf(freq, docSize) * calculateIdf(word, docsCount)));
         });
-//        printIndex();
+//        printIndex("326.txt");
     }
 
     private Integer getDocSize(String doc) {
