@@ -1,8 +1,6 @@
 package utils;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,5 +19,16 @@ public class FileCollectingFunctions {
             }
         }
         return words;
+    }
+
+    public static List<String> getFileLines(String filePath) throws IOException {
+        List<String> lines = new ArrayList<>();
+        FileReader fileReader = new FileReader(filePath);
+        BufferedReader bufferedReader = new BufferedReader(fileReader);
+        String line;
+        while((line = bufferedReader.readLine()) != null){
+            lines.add(line);
+        }
+        return lines;
     }
 }

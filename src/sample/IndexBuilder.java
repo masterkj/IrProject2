@@ -20,11 +20,11 @@ public class IndexBuilder {
     List<String> splitedFile;
     TextProcess textProcess;
 
-    IndexBuilder() throws  IOException {
+    public IndexBuilder() throws  IOException {
 //        config = new PropertiesConfiguration();
 //        config.load("Application.properties");
 //        corpusPath = config.getString("corpus.path");
-        corpusPath  = "F:/IR/corpus";
+        corpusPath  = "D:/IR/corpus";
         indexer = new Indexer();
         textProcess = new TextProcess();
     }

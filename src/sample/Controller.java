@@ -24,6 +24,7 @@ public class Controller implements Initializable {
     private SpellCheck sc;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
         try {
             sc = new SpellCheck();
             indexBuilder = new IndexBuilder();

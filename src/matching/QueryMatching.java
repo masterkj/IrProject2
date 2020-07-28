@@ -11,12 +11,13 @@ import static utils.HelpingFunctions.sortByValue;
 public class QueryMatching {
     private Indexer index;
     private Map<String, Double> docsSimilarity;
-    private final int BEST_RESULTS = 30;
+    private final int BEST_RESULTS = 10;
 
     public QueryMatching(IndexBuilder indexBuilder) {
         index = indexBuilder.getIxndexer();
         docsSimilarity = new HashMap<>();
     }
+
     public List<String> match(Map<String, Double> queryVector) {
         List<String> queryResult = new ArrayList<>();
         index.getIndex().forEach((doc, vector) -> {
@@ -24,8 +25,8 @@ public class QueryMatching {
         });
         docsSimilarity = sortByValue((HashMap<String, Double>) docsSimilarity);
         int x = BEST_RESULTS;
-        for (Map.Entry<String, Double> el : docsSimilarity.entrySet()){
-            if(x == 0)
+        for (Map.Entry<String, Double> el : docsSimilarity.entrySet()) {
+            if (x == 0)
                 break;
             queryResult.add(el.getKey());
             x--;
@@ -42,7 +43,6 @@ public class QueryMatching {
     }
 
 
-
     private Double vectorTall(Map<String, Double> vector) {
         Collection<Double> vecComponents;
         vecComponents = vector.values();
@@ -52,7 +52,6 @@ public class QueryMatching {
         });
         return Math.sqrt(unSquartedResulted.get());
     }
-
 
 
 }
