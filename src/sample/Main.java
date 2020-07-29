@@ -23,7 +23,7 @@ public class Main extends Application {
     public static void main(String[] args) throws IOException {
         Evaluation evaluation = new Evaluation();
 //        evaluation.calculateQueriesResultFile();
-        evaluation.evaluateSystem();
+        evaluation.evaluateSystem   ();
 //       launch(args);
 
     }

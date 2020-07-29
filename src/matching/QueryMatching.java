@@ -11,7 +11,7 @@ import static utils.HelpingFunctions.sortByValue;
 public class QueryMatching {
     private Indexer index;
     private Map<String, Double> docsSimilarity;
-    private final int BEST_RESULTS = 10;
+    private final int BEST_RESULTS = 15;
 
     public QueryMatching(IndexBuilder indexBuilder) {
         index = indexBuilder.getIxndexer();
@@ -25,9 +25,11 @@ public class QueryMatching {
         });
         docsSimilarity = sortByValue((HashMap<String, Double>) docsSimilarity);
         int x = BEST_RESULTS;
+        System.out.println(" first 10 documents similar with query: --------");
         for (Map.Entry<String, Double> el : docsSimilarity.entrySet()) {
             if (x == 0)
                 break;
+            System.out.println(el.getValue());
             queryResult.add(el.getKey());
             x--;
         }
